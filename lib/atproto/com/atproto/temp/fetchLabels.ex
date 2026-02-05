@@ -1,0 +1,44 @@
+defmodule Com.Atproto.Temp.FetchLabels do
+  @moduledoc false
+  use Atex.Lexicon
+
+  deflexicon(%{
+    "defs" => %{
+      "main" => %{
+        "description" =>
+          "DEPRECATED: use queryLabels or subscribeLabels instead -- Fetch all labels from a labeler created after a certain date.",
+        "output" => %{
+          "encoding" => "application/json",
+          "schema" => %{
+            "properties" => %{
+              "labels" => %{
+                "items" => %{
+                  "ref" => "com.atproto.label.defs#label",
+                  "type" => "ref"
+                },
+                "type" => "array"
+              }
+            },
+            "required" => ["labels"],
+            "type" => "object"
+          }
+        },
+        "parameters" => %{
+          "properties" => %{
+            "limit" => %{
+              "default" => 50,
+              "maximum" => 250,
+              "minimum" => 1,
+              "type" => "integer"
+            },
+            "since" => %{"type" => "integer"}
+          },
+          "type" => "params"
+        },
+        "type" => "query"
+      }
+    },
+    "id" => "com.atproto.temp.fetchLabels",
+    "lexicon" => 1
+  })
+end

@@ -1,0 +1,23 @@
+defmodule Com.Atproto.Temp.RequestPhoneVerification do
+  @moduledoc false
+  use Atex.Lexicon
+
+  deflexicon(%{
+    "defs" => %{
+      "main" => %{
+        "description" => "Request a verification code to be sent to the supplied phone number",
+        "input" => %{
+          "encoding" => "application/json",
+          "schema" => %{
+            "properties" => %{"phoneNumber" => %{"type" => "string"}},
+            "required" => ["phoneNumber"],
+            "type" => "object"
+          }
+        },
+        "type" => "procedure"
+      }
+    },
+    "id" => "com.atproto.temp.requestPhoneVerification",
+    "lexicon" => 1
+  })
+end

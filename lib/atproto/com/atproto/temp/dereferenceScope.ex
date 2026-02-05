@@ -1,0 +1,44 @@
+defmodule Com.Atproto.Temp.DereferenceScope do
+  @moduledoc false
+  use Atex.Lexicon
+
+  deflexicon(%{
+    "defs" => %{
+      "main" => %{
+        "description" => "Allows finding the oauth permission scope from a reference",
+        "errors" => [
+          %{
+            "description" => "An invalid scope reference was provided.",
+            "name" => "InvalidScopeReference"
+          }
+        ],
+        "output" => %{
+          "encoding" => "application/json",
+          "schema" => %{
+            "properties" => %{
+              "scope" => %{
+                "description" => "The full oauth permission scope",
+                "type" => "string"
+              }
+            },
+            "required" => ["scope"],
+            "type" => "object"
+          }
+        },
+        "parameters" => %{
+          "properties" => %{
+            "scope" => %{
+              "description" => "The scope reference (starts with 'ref:')",
+              "type" => "string"
+            }
+          },
+          "required" => ["scope"],
+          "type" => "params"
+        },
+        "type" => "query"
+      }
+    },
+    "id" => "com.atproto.temp.dereferenceScope",
+    "lexicon" => 1
+  })
+end
