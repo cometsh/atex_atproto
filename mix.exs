@@ -29,7 +29,7 @@ defmodule AtexAtproto.MixProject do
 
   defp deps do
     [
-      {:atex, "~> 0.7"},
+      {:atex, "~> 0.8"},
       {:ex_doc, "~> 0.39", only: :dev, runtime: false, warn_if_outdated: true}
     ]
   end
