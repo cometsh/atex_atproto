@@ -58,16 +58,13 @@ defmodule Com.Atproto.Label.Defs do
       "labelValue" => %{
         "knownValues" => [
           "!hide",
-          "!no-promote",
           "!warn",
           "!no-unauthenticated",
-          "dmca-violation",
-          "doxxing",
           "porn",
           "sexual",
           "nudity",
-          "nsfl",
-          "gore"
+          "graphic-media",
+          "bot"
         ],
         "type" => "string"
       },
